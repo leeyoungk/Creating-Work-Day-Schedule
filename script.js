@@ -20,8 +20,8 @@ function emptyTextBars() {
 
 // Creating a function to run current Date.
 function currentTime() {
-    var date = moment().format('MMMM Do YYYY, h:mm:ss a');
-    
+    var date = moment().format("dddd, MMMM Do, YYYY, h:mm a");
+    currentDate.text(date);
     if(moment().format("mm:ss") === "00:00") location.reload();
 }
 
@@ -61,6 +61,23 @@ function clickedSaveButton(event) {
 currentTime();
 var updatingTimeInterval = setInterval(currentTime, 1000); 
 
+// load the hours
+for(var i = 0; i < workHours; i++) {
+    hourContainerEl.append(`
+        <div class="row">
+            <div class="col-1 hour">
+                <p>${moment(i+startHour,"H").format("h a")}</p>
+            </div>
+            <textarea class="col-10 ${checkingTimeline(i+startHour)}" id="${i}hourText">${unsavedHourlyItem[i]}</textarea>
+            <div class="col-1 saveBtn saveID">
+                <i class="fas fa-save fa-2x saveID"></i>
+            </div>
+        </div>
+    `);
+}
+
+// Event listener click on save button
+hourContainerEl.on("click", saveClicked);
 
 
 
