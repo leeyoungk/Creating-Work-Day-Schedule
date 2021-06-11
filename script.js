@@ -35,11 +35,11 @@ function checkingTimeline(hourIndex) {
 
 // Creating a function to save user inputs into local storage.
 function saveContents() {
-    var savedHourlyContent = [];
+    var savedHourlyItem = [];
     for(var i = 0; i < workHours; i++ ) {
-        savedHourlyContent.push($(`#${i}hourText`).val());
+        savedHourlyItem.push($(`#${i}hourText`).val());
     }
-    localStorage.setItem("savedHourlyContent", JSON.stringify(savedHourlyContent));
+    localStorage.setItem("savedHourlyItem", JSON.stringify(savedHourlyItem));
 }
 
 function showClick(target) {
@@ -49,7 +49,7 @@ function showClick(target) {
     }, 150);
 }
 // save data when button is clicked 
-function clickedSaveButton(event) {
+function clickSaveButton(event) {
     if($(event.target).hasClass("saveID")) {
         saveContents();
         (event.target.nodeName === "DIV" ? showClick(event.target) : showClick(event.target.parentNode));
@@ -77,7 +77,7 @@ for(var i = 0; i < workHours; i++) {
 }
 
 // Event listener click on save button
-hourContainerEl.on("click", saveClicked);
+hourContainerEl.on("click", clickSaveButton);
 
 
 
