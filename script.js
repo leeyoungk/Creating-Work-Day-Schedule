@@ -8,7 +8,7 @@ var startHour = 10;
 
 // creating local Storage for data
 var unsavedHourlyItem = JSON.parse(localStorage.getItem("savedHourlyItem")) || emptyTextBars();
-
+var specialDay = ['resting','chilling','cheerful','motivated','soulful']
 // Creating a function for user to input data
 function emptyTextBars() {
     var emptyArray = [];
@@ -20,20 +20,19 @@ function emptyTextBars() {
 
 // Creating a function to run current Date.
 function currentTime() {
-    var date = moment().format("dddd, MMMM Do, YYYY, h:mm a");
-    currentDate.text(date);
-    if(moment().format("mm:ss") === "00:00") location.reload();
+	var date = moment().format( 'dddd, MMMM Do, YYYY, h:mm a' );
+	currentDate.text( `${specialDay[moment().format( 'd' )]} ${date}` );
+	if( moment().format( 'mm:ss' ) === '00:00' ) {
+		location.reload();
+	}
 }
 
-// Comparing the index Values to current hour and return a class name.
-function checkingTimeline(hourIndex) {
+function checkingTimeline(index) {
     var currentHour = moment().format("H");
-    return (hourIndex < currentHour ? "past" : (hourIndex > currentHour ? "future" : "present"));
+    return (index < currentHour ? "past" : (index > currentHour ? "future" : "present"));
 }
 
 
-
-// Creating a function to save user inputs into local storage.
 function saveContents() {
     var savedHourlyItem = [];
     for(var i = 0; i < workHours; i++ ) {

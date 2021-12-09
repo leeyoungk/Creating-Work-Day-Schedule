@@ -18,7 +18,8 @@ save data when button is clicked
 ## Usage
 
 this is my web application:
-![Work Day Schedul](https://user-images.githubusercontent.com/82126894/140254271-f1100d22-b319-43dc-9112-dbea6b3be1a4.png)
+![Work Day Scheduler](https://user-images.githubusercontent.com/82126894/145314696-e920ecca-c0f8-4ca6-8265-cbc3b7dc265a.png)
+
 
 ## Credit
 [Moment.js](https://momentjs.com/) 

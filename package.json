@@ -1,0 +1,20 @@
+{
+  "name": "Creating-Work-Day-Schedule",
+  "version": "1.0.0",
+  "description": "Deployed Application: https://leeyoungk.github.io/Creating-Work-Day-Schedule/",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leeyoungk/Creating-Work-Day-Schedule.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leeyoungk/Creating-Work-Day-Schedule/issues"
+  },
+  "homepage": "https://github.com/leeyoungk/Creating-Work-Day-Schedule#readme"
+}
